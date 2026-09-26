@@ -1,13 +1,21 @@
 #!/bin/bash
 
-INPUT="/mnt/c/Users/USUARIO/Desktop/TFM VARIOS/genomas_entrenamiento/proteinas_kofam"
-PROFILES="/home/melaniepolo/kofam_db/profiles_107"
-KO_LIST="/home/melaniepolo/kofam_database/ko_list"
-OUTPUT="/home/melaniepolo/kofam_db/resultados_53"
-TMP="/home/melaniepolo/kofam_db/tmp_53"
+# Directorio raíz del repositorio
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
+#Rutas
+INPUT="$REPO_DIR/data/proteinas_kofam"
+PROFILES="$HOME/kofam_db/profiles_107"
+KO_LIST="$HOME/kofam_database/ko_list"
+OUTPUT="$SCRIPT_DIR/resultados_53"
+TMP="$SCRIPT_DIR/tmp_53"
+
+#Crear directorios
 mkdir -p "$OUTPUT"
 mkdir -p "$TMP"
+
+#Función de anotación
 
 run_kofam() {
 
