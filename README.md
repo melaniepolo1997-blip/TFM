@@ -184,6 +184,7 @@ La capacidad de generalización está condicionada por el número y la represent
 
 # Autoría
 Proyecto desarrollado como parte del Trabajo de Fin de Máster en Bioinformática.
-Autora: Melanie Polo
-Título del proyecto: Desarrollo de un pipeline de Machine Learning para predecir funciones biológicas de microorganismos mediante análisis genómico y transcriptómico.
-Institución: Universidad Internacional de La Rioja (UNIR).
+- **Autora:** Melanie Polo
+- **Título del proyecto:** Desarrollo de un pipeline de Machine Learning para predecir funciones biológicas de microorganismos mediante análisis genómico y transcriptómico.
+- **Institución:** Universidad Internacional de La Rioja (UNIR).
+
