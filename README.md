@@ -107,6 +107,8 @@ El modelos Random Forest (RF) se entrenó con los 53 organismos de referencia y 
 # Organización del repositorio
 
 La estructura general del proyecto es la siguiente:
+
+```text
 TFM/
 ├── data/
 │   ├── Clasificación tipo hidrocarburos.csv
@@ -137,6 +139,8 @@ TFM/
 ├── Pipeline.py
 ├── LICENSE
 └── README.md
+```
+
 
 Descripción de los componentes
 
