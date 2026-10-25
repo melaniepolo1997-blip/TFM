@@ -10,17 +10,12 @@ El objetivo de este proyecto es desarrollar un procedimiento reproducible y que 
 El presente proyecto representa una estimación basada en características genómicas y empleando organismos de referencia, Mas no constituye, por si sola, una demostración experimental. 
 
 # Objetivos
-•	Recopilar y procesar información genómica y funcional de microorganismos relacionados con la degradación de hidrocarburos.
-
-•	Identificar genes y rutas metabólicas asociadas con la degradación de hidrocarburos.
-
-•	Construir un conjunto de datos que permita relacionar las características genómicas de los microorganismos con su potencial funcional.
-
-•	Evaluar diferentes modelos de machine learning para la identificación de microorganismos con potencial funcional relacionado con la degradación de hidrocarburos.
-
-•	Desarrollar un pipeline bioinformático reproducible para la clasificación de microorganismos con potencial degradador. 
-
-•	Aplicar el pipeline desarrollado a nuevos datos metagenómicos obtenidos a partir de ecosistemas de páramo para identificar y priorizar candidatos con potencial funcional para la degradación de hidrocarburos.
+-Recopilar y procesar información genómica y funcional de microorganismos relacionados con la degradación de hidrocarburos.
+-Identificar genes y rutas metabólicas asociadas con la degradación de hidrocarburos.
+-Construir un conjunto de datos que permita relacionar las características genómicas de los microorganismos con su potencial funcional.
+-Evaluar diferentes modelos de machine learning para la identificación de microorganismos con potencial funcional relacionado con la degradación de hidrocarburos.
+-Desarrollar un pipeline bioinformático reproducible para la clasificación de microorganismos con potencial degradador. 
+-Aplicar el pipeline desarrollado a nuevos datos metagenómicos obtenidos a partir de ecosistemas de páramo para identificar y priorizar candidatos con potencial funcional para la degradación de hidrocarburos.
 
 # Flujo de trabajo 
 
