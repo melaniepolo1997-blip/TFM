@@ -31,6 +31,7 @@ Etapa 1. Definir las rutas metabólicas
 Se identificaron siete rutas metabólicas de KEGG relacionadas con la degradación de hidrocarburos:
 
 | Código KEGG |	Ruta metabólica |
+|:---|:---:|
 | map00361 |	Degradación de clorociclohexano y clorobenceno |
 | map00622 |	Degradación de xileno |
 | map00623 |	Degradación de tolueno |
