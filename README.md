@@ -12,10 +12,10 @@ El presente proyecto representa una estimación basada en características genó
 # Objetivos
 - Recopilar y procesar información genómica y funcional de microorganismos relacionados con la degradación de hidrocarburos.
 - Identificar genes y rutas metabólicas asociadas con la degradación de hidrocarburos.
--Construir un conjunto de datos que permita relacionar las características genómicas de los microorganismos con su potencial funcional.
--Evaluar diferentes modelos de machine learning para la identificación de microorganismos con potencial funcional relacionado con la degradación de hidrocarburos.
--Desarrollar un pipeline bioinformático reproducible para la clasificación de microorganismos con potencial degradador. 
--Aplicar el pipeline desarrollado a nuevos datos metagenómicos obtenidos a partir de ecosistemas de páramo para identificar y priorizar candidatos con potencial funcional para la degradación de hidrocarburos.
+- Construir un conjunto de datos que permita relacionar las características genómicas de los microorganismos con su potencial funcional.
+- Evaluar diferentes modelos de machine learning para la identificación de microorganismos con potencial funcional relacionado con la degradación de hidrocarburos.
+- Desarrollar un pipeline bioinformático reproducible para la clasificación de microorganismos con potencial degradador. 
+- Aplicar el pipeline desarrollado a nuevos datos metagenómicos obtenidos a partir de ecosistemas de páramo para identificar y priorizar candidatos con potencial funcional para la degradación de hidrocarburos.
 
 # Flujo de trabajo 
 
@@ -66,18 +66,18 @@ Los genomas de referencia se sometieron a anotación funcional utilizando la her
 
 La anotación se restringió a los KO objetivo (107 KO) definidos previamente. Los resultados se procesaron para construir una matriz binaria de presencia y ausencia: 
 
-•	1: KO identificado mediante un resultado aceptado por KofamScan.
-•	0: KO no identificado como presente en la anotación analizada.
+- 1: KO identificado mediante un resultado aceptado por KofamScan.
+- 0: KO no identificado como presente en la anotación analizada.
 
 Etapa 6: Construcción de la matriz de entrenamiento 
 
 A partir de la matriz de anotación funcional se eliminaron aquellos KO sin presencia en ninguno de los organismos de entrenamiento. Obteniendo un total de 78 KO informativos para la construcción de la matriz final de ML. 
 
 La matriz contiene:
-•	53 organismos.
-•	78 variables KO binarias.
-•	Una variable de clase (Label).
-•	Identificadores del organismo y del genoma.
+- 53 organismos.
+- 78 variables KO binarias.
+- Una variable de clase (Label).
+- Identificadores del organismo y del genoma.
 
 La etiqueta (label) distingue entre organismos positivos y negativos según la clasificación de referencia establecida para el entrenamiento. 
 
@@ -85,15 +85,15 @@ Etapa 7: Entrenamiento y evaluación de modelos de ML
 
 A partir de información obtenida en bibliografía, se evaluaron dos algoritmos de clasificación supervisada: 
 
-•	Random Forest: clasificador basado en un conjunto de árboles de decisión.
-•	Support Vector Machine (SVM): clasificador basado en máquinas de vectores de soporte.
+- Random Forest: clasificador basado en un conjunto de árboles de decisión.
+-	Support Vector Machine (SVM): clasificador basado en máquinas de vectores de soporte.
 
 El rendimiento se evaluó mediante las siguientes métricas: 
-•	Accuracy.
-•	Precision.
-•	Recall.
-•	F1-score.
-•	ROC-AUC.
+-	Accuracy.
+-	Precision.
+-	Recall.
+-	F1-score.
+-	ROC-AUC.
 
 Etapa 8: Predicción y priorización de candidatos
 
@@ -139,14 +139,15 @@ TFM/
 
 Descripción de los componentes
 
-Componente -> Función
-•	 Pipeline.py: Script principal para integrar las etapas de análisis funcional y selección de candidatos.
-•	scripts/Assembly/:	Búsqueda, recuperación y revisión de información de ensamblajes genómicos.
-•	scripts/preparación genomas/:	Preparación de los conjuntos de organismos y descarga de genomas.
-• scripts/Annotation/:	Configuración de los KO objetivo, ejecución de KofamScan y construcción de matrices de anotación.
-•	scripts/entrenamiento ML/:	Entrenamiento, evaluación y aplicación de los modelos de clasificación.
-•	training/: 	Matriz de características utilizada para el entrenamiento.
-•	data/:	Archivos de entrada requeridos por las etapas del pipeline.
+| Componente | Función |
+|:---|:---:|
+| Pipeline.py | Script principal para integrar las etapas de análisis funcional y selección de candidatos |
+| scripts/Assembly/	| Búsqueda, recuperación y revisión de información de ensamblajes genómicos |
+| scripts/preparación genomas/ | Preparación de los conjuntos de organismos y descarga de genomas |
+| scripts/Annotation/	| Configuración de los KO objetivo, ejecución de KofamScan y construcción de matrices de anotación |
+| scripts/entrenamiento ML/	| Entrenamiento, evaluación y aplicación de los modelos de clasificación |
+|training/ |	Matriz de características utilizada para el entrenamiento |
+|data/ |	Archivos de entrada requeridos por las etapas del pipeline |
 
 # Requisitos de software 
 
@@ -169,13 +170,13 @@ Orden de ejecución:
 # Resultados principales
 
 El flujo de trabajo desarrollado contempla los siguientes productos:
-•	Matriz funcional de 141 candidatos con 107 KO objetivo.
-•	Matriz de anotación funcional de 53 organismos de referencia.
-•	Matriz de entrenamiento con 78 KO informativos.
-•	Métricas de validación cruzada de Random Forest y SVM.
-•	Matriz de confusión e importancias de variables KO.
-•	Predicciones y ranking de priorización de los 141 candidatos.
-•	Resumen de cobertura funcional mediante KO, módulos y rutas metabólicas.
+-	Matriz funcional de 141 candidatos con 107 KO objetivo.
+-	Matriz de anotación funcional de 53 organismos de referencia.
+-	Matriz de entrenamiento con 78 KO informativos.
+-	Métricas de validación cruzada de Random Forest y SVM.
+-	Matriz de confusión e importancias de variables KO.
+-	Predicciones y ranking de priorización de los 141 candidatos.
+- Resumen de cobertura funcional mediante KO, módulos y rutas metabólicas.
 
 # Limitaciones
 
