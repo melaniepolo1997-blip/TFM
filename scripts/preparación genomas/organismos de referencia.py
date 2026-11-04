@@ -1535,7 +1535,6 @@ for i, fila in enumerate(assemblies.itertuples(index=False), start=1):
     assembly = fila.Assembly_accession
     label = fila.label
 
-    print("=" * 70)
     print(f"[{i}/{len(assemblies)}] {organismo}")
     print(f"Assembly: {assembly}")
     print(f"Label: {label}")
