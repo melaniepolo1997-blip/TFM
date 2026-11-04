@@ -453,9 +453,12 @@ print(
 )
 
 #Guardar resultados 
+ruta_predicciones = Results_DIR / "predicciones_candidatos.csv"
+
 resultados_candidatos.to_csv(
-    Results_DIR,
-    index=False
+    ruta_predicciones,
+    index=False,
+    encoding="utf-8-sig"
 )
 
 #%%
