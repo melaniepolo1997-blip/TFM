@@ -2097,7 +2097,6 @@ resultados_rf = cross_validate(
 # --------------------------------------------------
 
 print("RESULTADOS RANDOM FOREST")
-print("-" * 40)
 
 for metrica in scoring:
     valores = resultados_rf[f"test_{metrica}"]
@@ -2222,7 +2221,6 @@ importancias_rf = importancias_rf.sort_values(
 ).reset_index(drop=True)
 
 print("TOP 20 KO MÁS IMPORTANTES")
-print("-" * 40)
 print(importancias_rf.head(20).to_string(index=False))
 
 # %%
@@ -2244,7 +2242,6 @@ pred_rf = cross_val_predict(
 cm_rf = confusion_matrix(y, pred_rf)
 
 print("MATRIZ DE CONFUSIÓN - RANDOM FOREST")
-print("-" * 40)
 print(cm_rf)
 
 print("\nInterpretación:")
@@ -2316,10 +2313,8 @@ archivos = [
 
 for ruta_archivo in archivos:
     
-    print("\n" + "=" * 70)
     print(Path(ruta_archivo).name)
-    print("=" * 70)
-    
+
     tabla = pd.read_csv(ruta_archivo)
     
     print("Dimensiones:", tabla.shape)
@@ -2437,7 +2432,6 @@ resultados_candidatos.insert(
 # ------------------------------------------------------------
 
 print("\nRESULTADOS DE LOS CANDIDATOS")
-print("=" * 60)
 
 print(
     resultados_candidatos.head(20).to_string(index=False)
@@ -2514,7 +2508,6 @@ tabla_final_candidatos["Rank"] = range(
 # ------------------------------------------------------------
 
 print("\nTABLA FINAL DE CANDIDATOS")
-print("=" * 80)
 
 print(
     tabla_final_candidatos.head(30).to_string(index=False)
@@ -2542,9 +2535,7 @@ ruta_ranking = r"C:\Users\USUARIO\Desktop\TFM VARIOS\ranking_candidatos_RF_final
 
 ranking = pd.read_csv(ruta_ranking)
 
-print("=" * 80)
 print("ANÁLISIS PARA PRIORIZACIÓN DE CANDIDATOS")
-print("=" * 80)
 
 print("\nDimensiones:")
 print(ranking.shape)
@@ -2557,10 +2548,7 @@ print(ranking.columns.tolist())
 # 1. DISTRIBUCIÓN DE PROBABILIDAD DEL RANDOM FOREST
 # ------------------------------------------------------------
 
-print("\n" + "=" * 80)
 print("1. PROBABILITY_POSITIVE")
-print("=" * 80)
-
 print(
     ranking["Probability_positive"]
     .describe()
@@ -2572,9 +2560,7 @@ print(
 # 2. CATEGORÍAS DE PROBABILIDAD
 # ------------------------------------------------------------
 
-print("\n" + "=" * 80)
 print("2. DISTRIBUCIÓN DE PROBABILIDAD")
-print("=" * 80)
 
 categorias_prob = pd.cut(
     ranking["Probability_positive"],
@@ -2594,9 +2580,7 @@ print(categorias_prob.value_counts().sort_index())
 # 3. DISTRIBUCIÓN DE KO
 # ------------------------------------------------------------
 
-print("\n" + "=" * 80)
 print("3. KO_PRESENTES")
-print("=" * 80)
 
 print(
     ranking["KO_presentes"]
@@ -2609,9 +2593,7 @@ print(
 # 4. DISTRIBUCIÓN DE MÓDULOS
 # ------------------------------------------------------------
 
-print("\n" + "=" * 80)
 print("4. MODULES_PRESENTES")
-print("=" * 80)
 
 print(
     ranking["Modules_presentes"]
@@ -2624,10 +2606,7 @@ print(
 # 5. DISTRIBUCIÓN DE RUTAS
 # ------------------------------------------------------------
 
-print("\n" + "=" * 80)
 print("5. PATHWAYS_PRESENTES")
-print("=" * 80)
-
 print(
     ranking["Pathways_presentes"]
     .describe()
@@ -2639,9 +2618,7 @@ print(
 # 6. TABLA RESUMEN DE LOS CANDIDATOS
 # ------------------------------------------------------------
 
-print("\n" + "=" * 80)
 print("6. CORRELACIÓN ENTRE VARIABLES")
-print("=" * 80)
 
 variables = [
     "Probability_positive",
