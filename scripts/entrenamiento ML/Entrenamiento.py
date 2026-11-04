@@ -467,6 +467,9 @@ resultados_candidatos.to_csv(
 #Contrucción de tabla final de candidatos y modelo RF
 #======================================================
 
+ruta_resumen = Results_DIR / "matriz_resumen_funcional_141.csv"
+
+resumen = pd.read_csv(ruta_resumen)
 
 #Combinar predicciones con resumen funcional
 tabla_final_candidatos = resultados_candidatos.merge(
