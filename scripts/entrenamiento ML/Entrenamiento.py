@@ -198,7 +198,7 @@ with open(ruta_ko, "w") as f:
 matriz_kofamscan = pd.read_csv(
     Results_DIR / "MATRIZ_KOFAMSCAN_53x78.csv"
 )
-df = pd.read_csv(matriz_kofamscan)
+df = matriz_kofamscan.copy()
 
 # Separar variable objetivo
 y = df["Label"].astype(int)
