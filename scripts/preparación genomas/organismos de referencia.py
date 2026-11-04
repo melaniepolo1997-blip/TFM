@@ -1682,10 +1682,7 @@ for i, fila in enumerate(assemblies.itertuples(index=False), start=1):
 # Convertir resultados a DataFrame
 resultados_descarga = pd.DataFrame(resultados_descarga)
 
-print("\n" + "=" * 70)
 print("RESUMEN DE DESCARGAS")
-print("=" * 70)
-
 print(
     resultados_descarga["Estado"]
     .value_counts()
