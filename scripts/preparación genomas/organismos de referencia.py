@@ -2478,20 +2478,24 @@ resumen = pd.read_csv(ruta_resumen)
 
 print("Resumen funcional:", resumen.shape)
 
-# ------------------------------------------------------------
-# Combinar predicciones con resumen funcional
-# ------------------------------------------------------------
+# Comprobar identificador
+print("Columnas:", resumen.columns.tolist())
 
+# Comprobar duplicados
+print(
+    "Organism_code duplicados:",
+    resumen["Organism_code"].duplicated().sum()
+)
+
+# Combinar predicciones con resumen funcional
 tabla_final_candidatos = resultados_candidatos.merge(
     resumen,
     on="Organism_code",
-    how="left"
+    how="left",
+    validate="one_to_one"
 )
 
-# ------------------------------------------------------------
 # Ordenar por probabilidad
-# ------------------------------------------------------------
-
 tabla_final_candidatos = tabla_final_candidatos.sort_values(
     by="Probability_positive",
     ascending=False
@@ -2503,32 +2507,20 @@ tabla_final_candidatos["Rank"] = range(
     len(tabla_final_candidatos) + 1
 )
 
-# ------------------------------------------------------------
-# Mostrar primeros 30
-# ------------------------------------------------------------
-
+# Mostrar resultados
 print("\nTABLA FINAL DE CANDIDATOS")
+print(tabla_final_candidatos.head(30).to_string(index=False))
 
-print(
-    tabla_final_candidatos.head(30).to_string(index=False)
-)
-
-# ------------------------------------------------------------
 # Guardar
-# ------------------------------------------------------------
-
-ruta_salida_final = (
-    r"C:\Users\USUARIO\Desktop\TFM VARIOS"
-    r"\ranking_candidatos_RF_final.csv"
-)
+ruta_salida_final = Results_DIR / "ranking_candidatos_RF_final.csv"
 
 tabla_final_candidatos.to_csv(
     ruta_salida_final,
-    index=False
+    index=False,
+    encoding="utf-8-sig"
 )
 
-print("\nArchivo generado:")
-print(ruta_salida_final)
+print("\nArchivo generado:", ruta_salida_final)
 
 # %%
 ruta_ranking = r"C:\Users\USUARIO\Desktop\TFM VARIOS\ranking_candidatos_RF_final.csv"
